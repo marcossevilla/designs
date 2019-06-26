@@ -29,6 +29,7 @@ class ButtonsPage extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: _bottomNavBar(context),
     );
   }
 
@@ -89,6 +90,37 @@ class ButtonsPage extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _bottomNavBar(BuildContext context) {
+    return Theme(
+      child: BottomNavigationBar(
+        fixedColor: Colors.purpleAccent[400],
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today, size: 30.0),
+            title: Container(),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.touch_app, size: 30.0),
+            title: Container(),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.verified_user, size: 30.0),
+            title: Container(),
+          ),
+        ],
+      ),
+      data: Theme.of(context).copyWith(
+        canvasColor: Colors.indigo[900],
+        primaryColor: Colors.pinkAccent,
+        textTheme: Theme.of(context).textTheme.copyWith(
+              caption: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
       ),
     );
   }
