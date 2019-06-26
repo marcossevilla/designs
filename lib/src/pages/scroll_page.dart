@@ -33,7 +33,7 @@ class ScrollPage extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Color.fromRGBO(110, 190, 220, 1.0),
+      color: Colors.white,
       child: Center(
         child: RaisedButton(
           color: Colors.blue,
