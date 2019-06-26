@@ -134,22 +134,22 @@ class ButtonsPage extends StatelessWidget {
     return Table(
       children: [
         TableRow(children: [
-          _createRoundedButton(),
-          _createRoundedButton(),
+          _createRoundedButton(Colors.red, Icons.videogame_asset, 'Games'),
+          _createRoundedButton(Colors.blue, Icons.wb_sunny, 'Weather'),
         ]),
         TableRow(children: [
-          _createRoundedButton(),
-          _createRoundedButton(),
+          _createRoundedButton(Colors.purple, Icons.add_shopping_cart, 'Cart'),
+          _createRoundedButton(Colors.green, Icons.all_inclusive, 'Infinity'),
         ]),
         TableRow(children: [
-          _createRoundedButton(),
-          _createRoundedButton(),
+          _createRoundedButton(Colors.yellow, Icons.alternate_email, 'Mail'),
+          _createRoundedButton(Colors.tealAccent, Icons.android, 'Android'),
         ]),
       ],
     );
   }
 
-  Widget _createRoundedButton() {
+  Widget _createRoundedButton(Color color, IconData icon, String text) {
     return Container(
       height: 150.0,
       margin: EdgeInsets.all(15.0),
@@ -162,14 +162,14 @@ class ButtonsPage extends StatelessWidget {
         children: <Widget>[
           CircleAvatar(
             child: Icon(
-              Icons.videogame_asset,
+              icon,
               color: Colors.white,
               size: 30.0,
             ),
             radius: 35.0,
-            backgroundColor: Colors.purpleAccent,
+            backgroundColor: color,
           ),
-          Text('Anything', style: normalTextStyle),
+          Text(text, style: normalTextStyle),
         ],
       ),
     );
