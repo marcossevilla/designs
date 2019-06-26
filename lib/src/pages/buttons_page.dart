@@ -14,6 +14,10 @@ class ButtonsPage extends StatelessWidget {
     fontSize: 18.0,
   );
 
+  final normalTextStyle = TextStyle(
+    color: Colors.white,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +28,7 @@ class ButtonsPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 _titles(),
+                _roundedButtons(),
               ],
             ),
           ),
@@ -121,6 +126,51 @@ class ButtonsPage extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+      ),
+    );
+  }
+
+  Widget _roundedButtons() {
+    return Table(
+      children: [
+        TableRow(children: [
+          _createRoundedButton(),
+          _createRoundedButton(),
+        ]),
+        TableRow(children: [
+          _createRoundedButton(),
+          _createRoundedButton(),
+        ]),
+        TableRow(children: [
+          _createRoundedButton(),
+          _createRoundedButton(),
+        ]),
+      ],
+    );
+  }
+
+  Widget _createRoundedButton() {
+    return Container(
+      height: 150.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Colors.purpleAccent[700].withOpacity(0.7),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          CircleAvatar(
+            child: Icon(
+              Icons.videogame_asset,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            radius: 35.0,
+            backgroundColor: Colors.purpleAccent,
+          ),
+          Text('Anything', style: normalTextStyle),
+        ],
       ),
     );
   }
